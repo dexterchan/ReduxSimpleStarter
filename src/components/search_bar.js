@@ -7,9 +7,19 @@ const SearchBar = ()=> {
 };*/
 
 //JSX class
+//Only class based object has state
 class SearchBar extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={term:''};
+    }
     render(){
-        return <input onChange={ (event)=>    console.log(event)  }/>
+        return (
+        <div>
+        <input onChange={ (event)=> this.setState({term:event.target.value}) }/>
+        Value of the input : {this.state.term}
+        </div>        
+        );
     }
     onInputChange(event){
         console.log(event.target.value);
