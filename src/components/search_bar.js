@@ -11,15 +11,16 @@ const SearchBar = ()=> {
 class SearchBar extends React.Component{
     constructor(props){
         super(props);
-        this.state={term:''};
+        this.state={term:'Start'};
     }
     render(){
         return (
         <div>
-        <input onChange={ (event)=> this.setState({term:event.target.value}) }/>
-        Value of the input : {this.state.term}
+        <input value={this.state.term} onChange={ (event)=> this.setState({term:event.target.value}) }/>
+        
         </div>        
         );
+        //Value of the input : {this.state.term}
     }
     onInputChange(event){
         console.log(event.target.value);
