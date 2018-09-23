@@ -11,19 +11,26 @@ const SearchBar = ()=> {
 class SearchBar extends React.Component{
     constructor(props){
         super(props);
-        this.state={term:'Start'};
+        this.state={term:'Type your query here...', onQuery:props.onQuery};
     }
     render(){
+        
+
         return (
-        <div>
-        <input value={this.state.term} onChange={ (event)=> this.setState({term:event.target.value}) }/>
+        <div className="search-bar">
+        <input value={this.state.term} 
+        onChange={ (event)=> this.onInputChange(event.target.value)}
+        onClick={ (event)=>this.setState({term:""})}/>
         
         </div>        
         );
         //Value of the input : {this.state.term}
     }
-    onInputChange(event){
-        console.log(event.target.value);
+    onInputChange(queryStr){
+        this.setState({term:queryStr}) ;
+        if(queryStr.length > 0){
+            this.props.onQuery(queryStr);
+        }
     }
 }
 
