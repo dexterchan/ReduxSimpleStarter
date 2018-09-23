@@ -9,7 +9,7 @@ import VideoDetail from "./components/video_detail";
 //const is ES6
 const QUERY_STR="AIzaSyAVIVRTFQ6aduDqqzNKp1EPQDIJtOnWlek";
 
-
+//Only class component can interact with "STATE"
 
 class App extends Component{
     constructor(props){
