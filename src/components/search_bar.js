@@ -8,6 +8,9 @@ const SearchBar = ()=> {
 
 //JSX class
 //Only class based object has state
+//State is localized in the instance of a class
+//When state changes, the class re-render itself
+
 class SearchBar extends React.Component{
     constructor(props){
         super(props);
